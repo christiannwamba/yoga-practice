@@ -12,7 +12,23 @@ const typeDefs = `
   }
 `;
 
-const resolvers = {};
+const computersData = [
+  {
+    model: 'Macbook Pro',
+    maker: 'Apple',
+    year: 2016
+  },
+  {
+    model: 'Macbook Air',
+    maker: 'Apple',
+    year: 2017
+  },
+]
+const resolvers = {
+  Query: {
+    computers: () => computersData
+  }
+};
 
 const server = new GraphQLServer({
   typeDefs,
