@@ -1,6 +1,16 @@
 const { GraphQLServer } = require('graphql-yoga');
 
-const typeDefs = ``;
+const typeDefs = `
+  type Computer {
+    model: String!
+    maker: String!
+    year: Int!
+  }
+
+  type Query {
+    computers: [Computer!]!
+  }
+`;
 
 const resolvers = {};
 
@@ -9,4 +19,4 @@ const server = new GraphQLServer({
   resolvers
 })
 
-server.start({port: 6000}, () => console.log(`Server running at 6000`))
+server.start({port: 4200}, () => console.log(`Server running at 4200`))
